@@ -1,4 +1,4 @@
-package hell.advanced.app.v0;
+package hello.advanced.app.v0;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
