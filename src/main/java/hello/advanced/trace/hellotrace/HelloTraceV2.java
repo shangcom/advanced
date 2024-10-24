@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * 메서드 호출 시마다 TraceId를 파라미터로 전달함.
  * 로깅을 추가하거나 변경할 때 모든 메서드 시그니처를 수정해야 함.
  * -> FieldLogTrace에서는 필드로 TraceId 관리하는 방식으로 리팩토링.
-**/
+*/
 @Slf4j
 @Component
 public class HelloTraceV2 {
