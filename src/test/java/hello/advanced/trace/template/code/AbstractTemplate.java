@@ -11,8 +11,6 @@ import lombok.extern.slf4j.Slf4j;
  *      protected로 외부에서의 호출을 막는 이유?
  *      execute까지 세트로 동작해야 하는 메서드인데 call 부분만 떼어내서 사용하는 일 방지.
  *      정해진 흐름대로만 작동하도록 강제.
- * SubClassLogic1, 2를 만들 필요 없이 익명 클래스로 구현하면 편하다.
- * 단, 람다식은 불가능. 람다식은 메서드가 하나만 있는 함수형 인터페이스에만 적용 가능하다.
  */
 @Slf4j
 public abstract class AbstractTemplate {
