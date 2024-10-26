@@ -1,7 +1,7 @@
 package hello.advanced.app.v4;
 
-import hello.advanced.trace.TraceStatus;
 import hello.advanced.trace.logtrace.LogTrace;
+import hello.advanced.trace.template.AbstractTemplate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,20 +15,15 @@ public class OrderServiceV4 {
     private final LogTrace trace;
 
     public void orderItem(String itemId) {
+        AbstractTemplate<Void> template = new AbstractTemplate<>(trace) {
+            @Override
+            protected Void call() {
+                orderRepositoryV4.save(itemId);
+                return null;
+            }
+        };
 
-        TraceStatus status = null;
-        try {
-            status = trace.begin("OrderService.orderItem()");
-
-            // 저장 로직
-            orderRepositoryV4.save(itemId);
-
-            trace.end(status);
-
-        } catch (Exception e) {
-            trace.exception(status, e);
-            throw e;
-        }
+        template.execute("OrderService.orderItem()");
     }
 
 }
