@@ -12,8 +12,7 @@ public class TemplateCallbackTest {
      * 템플릿 콜백 패턴 - 익명 내부 클래스
      */
     @Test
-    void callbackV11() {
-
+    void callbackV1() {
         TimeLogTemplate timeLogTemplate = new TimeLogTemplate();
         timeLogTemplate.execute(new Callback() {
             @Override
